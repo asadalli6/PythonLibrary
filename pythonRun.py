@@ -145,4 +145,4 @@ llist.insertAtBegin('8')
 print("Display Linked List: ")
 llist.printLL()
 
-print("\nNodes in linked list: " + str(llist.sizeOfLL()))
+print("Nodes in linked list: " + str(llist.sizeOfLL()))
