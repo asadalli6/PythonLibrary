@@ -1,4 +1,4 @@
-import _tkinter as TK
+import os
 
 class Node:
     def __init__(self, data):
@@ -140,6 +140,9 @@ def reverse(st):
         
     return ', '.join(arr)
 
+def clear_terminal():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 #Python Main Loop
 llist = LinkedList()
 while True:
@@ -155,16 +158,22 @@ while True:
         taskName = input("What would you like to do: ")
         llist.insertAtEnd(taskName)
         print("Task added!")
+        pau = input("Press any key to continue")
 
     if choice == '2':
         llist.printLL()
+        pau = input("Press any key to continue")
 
     if choice == '3':
         llist.printLL()
         tasktoremove = input("Which task have you completed: ")
         llist.remove_at_index(tasktoremove)
         print("Task has been completed!")
+        pau = input("Press any key to continue")
 
     if choice == '4':
         print("Exiting Program...")
         exit()
+
+    clear_terminal()
+    pau = " "

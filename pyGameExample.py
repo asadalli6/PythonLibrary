@@ -13,7 +13,7 @@ titleText = fontWindow.render("Ball - Asad Alli 2024",True, "white")
 
 while running:
     for event in pygame.event.get():
-         if event.type == pygame.QUIT:
+        if event.type == pygame.QUIT:
             running = False
 
     screen.fill("black")
