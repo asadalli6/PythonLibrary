@@ -130,19 +130,41 @@ class LinkedList:
             print(current_node.data)
             current_node = current_node.next
 
+
+def reverse(st):
+    reversed = st.split(" ")[::-1]
+    arr = []
+    
+    for i in st:
+        arr.append(reversed)
+        
+    return ', '.join(arr)
+
 #Python Main Loop
 llist = LinkedList()
+while True:
+    print("===== Asad Alli To-Do List =====")
+    print("1. Add Tasks")
+    print("2. Show Tasks")
+    print("3. Mark Task as Completed")
+    print("4. Exit")
 
-llist.insertAtBegin('1')
-llist.insertAtBegin('2')
-llist.insertAtBegin('3')
-llist.insertAtBegin('4')
-llist.insertAtBegin('5')
-llist.insertAtBegin('6')
-llist.insertAtBegin('7')
-llist.insertAtBegin('8')
+    choice = input("Enter your choice: ")
 
-print("Display Linked List: ")
-llist.printLL()
+    if choice == '1':
+        taskName = input("What would you like to do: ")
+        llist.insertAtEnd(taskName)
+        print("Task added!")
 
-print("Nodes in linked list: " + str(llist.sizeOfLL()))
+    if choice == '2':
+        llist.printLL()
+
+    if choice == '3':
+        llist.printLL()
+        tasktoremove = input("Which task have you completed: ")
+        llist.remove_at_index(tasktoremove)
+        print("Task has been completed!")
+
+    if choice == '4':
+        print("Exiting Program...")
+        exit()
