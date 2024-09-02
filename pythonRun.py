@@ -126,9 +126,11 @@ class LinkedList:
 
     def printLL(self):
         current_node = self.head
+        counter = 0
         while(current_node):
-            print(current_node.data)
+            print(str(counter) + ': ' + current_node.data)
             current_node = current_node.next
+            counter = counter + 1
 
 
 def reverse(st):
@@ -162,13 +164,17 @@ while True:
 
     if choice == '2':
         llist.printLL()
+        print("Total tasks to complete: " + str(llist.sizeOfLL()))
         pau = input("Press any key to continue")
 
     if choice == '3':
         llist.printLL()
         tasktoremove = input("Which task have you completed: ")
-        llist.remove_at_index(tasktoremove)
-        print("Task has been completed!")
+        llist.remove_at_index(int(tasktoremove))
+        if (tasktoremove > llist.sizeOfLL()):
+            print("Subscript is out of range! Please try again.")
+        else:
+            print("Task has been completed!")
         pau = input("Press any key to continue")
 
     if choice == '4':
